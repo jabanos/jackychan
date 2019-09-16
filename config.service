@@ -1,0 +1,10 @@
+[Unit]
+Description= Arranque configurador web
+After=syslog.target
+
+[Service]
+
+ExecStart=/home/pi/config
+
+[Install]
+WantedBy=multi-user.target
