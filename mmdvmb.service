@@ -1,0 +1,15 @@
+[Unit]
+Description=MMDVM Host Service
+After=syslog.target network.target
+
+[Service]
+User=root
+WorkingDirectory=/opt/MMDVM_Bridge
+ExecStart=/usr/bin/screen -S mmdvmb -D -m /opt/MMDVM_Bridge/MMDVM_Bridge /opt/MMDVM_Bridge/MMDVM_Bridge.ini
+ExecStop=/usr/bin/screen -S mmdvmb -X quit
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+
