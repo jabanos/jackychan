@@ -1,0 +1,70 @@
+sudo -s
+apt-get update
+apt-get -y upgrade
+cd /tmp
+wget http://dvswitch.org/install-dvswitch-repo
+chmod +x install-dvswitch-repo
+./install-dvswitch-repo
+apt-get update
+apt-get -y install dvswitch
+cd /opt/MMDVM_Bridge
+wget -O MMDVM_Bridge https://github.com/DVSwitch/MMDVM_Bridge/raw/master/bin/MMDVM_Bridge.armhf
+chmod +x MMDVM_Bridge
+cd /opt/Analog_Bridge/
+wget -O Analog_Bridge https://github.com/DVSwitch/Analog_Bridge/raw/master/bin/Analog_Bridge.armhf
+chmod +x Analog_Bridge
+cd /opt/Analog_Bridge
+mv Analog_Bridge.ini Analog_Bridge_ini.save
+wget https://github.com/DVSwitch/Analog_Bridge/raw/master/Analog_Bridge.ini
+wget https://github.com/DVSwitch/Analog_Bridge/raw/master/dmr.ini
+wget https://github.com/DVSwitch/Analog_Bridge/raw/master/dstar.ini
+wget https://github.com/DVSwitch/Analog_Bridge/raw/master/dvsm.ini
+wget https://github.com/DVSwitch/Analog_Bridge/raw/master/nxdn.ini
+wget https://github.com/DVSwitch/Analog_Bridge/raw/master/p25.ini
+wget https://github.com/DVSwitch/Analog_Bridge/raw/master/ysf.ini
+wget https://github.com/DVSwitch/Analog_Bridge/raw/master/scripts/analog_bridge.sh
+chmod +x analog_bridge.sh
+cd /usr/local/sbin
+wget https://github.com/DVSwitch/Analog_Bridge/raw/master/scripts/ab-restart.sh
+wget https://github.com/DVSwitch/Analog_Bridge/raw/master/scripts/call_id.sh
+wget https://github.com/DVSwitch/Analog_Bridge/raw/master/scripts/ssz.sh
+wget https://github.com/DVSwitch/Analog_Bridge/raw/master/scripts/test.sh
+wget https://github.com/DVSwitch/Analog_Bridge/raw/master/scripts/tune.sh
+chmod +x ab-restart.sh
+chmod +x call_id.sh
+chmod +x ssz.sh
+chmod +x test.sh
+chmod +x tune.sh
+#a partir de aqui configuracion
+sudo apt-get -y install dialog
+
+
+#Instalacion de scritps e inicio de lso mismos vis web
+
+sudo -s
+apt-get -y install cmake g++ pkg-config git vim-common libwebsockets-dev libjson-c-dev libssl-dev
+scd /opt/
+git clone https://github.com/tsl0922/ttyd.git
+cd ttyd && mkdir build && cd build
+cmake ..
+make && make install
+
+#PROBAR QUE FUNCIONA EL ACCESO WEB
+#ejecutar en una consola
+#ttyd -u bash sudo /home/pi/dvswitch.x
+#Acceder desde el navegador a htt://ipdelapi:7681
+#AÑADIR COMO SERVICIO AL INICIO EL ACCESO WEB AL SCRIPT
+
+cd /lib/systemd/system/
+wget https://raw.githubusercontent.com/jabanos/jackychan/master/config.service
+wget https://raw.githubusercontent.com/jabanos/jackychan/master/config.timer
+wget https://raw.githubusercontent.com/jabanos/jackychan/master/mmdvmb.service
+https://raw.githubusercontent.com/jabanos/jackychan/master/mmdvmb.timer
+chmod +x config.service
+chmod +x config.timer
+chmod +x mmdvmb.service
+chmod +x mmdvmb.timer
+
+#############################################
+
+
