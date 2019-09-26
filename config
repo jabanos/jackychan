@@ -1,0 +1,4 @@
+#!/bin/bash
+ttyd -u bash sudo /home/pi/inicio-disclaimer.sh
+
+             
