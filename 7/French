@@ -6,7 +6,7 @@ export MYSQLCAIDO="MySQL cette caido, essayais lever service"
 export NORECUPERAMYSQL="N'a pas été possible restaurer MySQL le système se réinitialisât"
 export MYSQLRECUPERADO="Service MySQL restauré"
 export LIBERADANUEVAVERSION="Libérée nouvelle actualizacion"
-export SEACTUALIZARA='Version $VERSIONGITHUB disponible. Le système sactualisât'
+export SEACTUALIZARA='Version disponible. Le système sactualisât'
 export SELECCIONAQUECONFIGURAR="Seleciona ce que veux configurer"
 export MENUGENENERAL="Menu général"
 export ACTUALIZARBINARIOS="Actualiser binaires"
@@ -269,3 +269,27 @@ export PREPARANDOBD="En préparant BD. Par faveur attendez...."
 export AVERTENCIA="Avertissement"
 export CONFIGURACIONNOAPLICADA="Configuracion N'appliquée"
 export REINICIAHB="Se réinitialisât HBLINK. Le Dashboard tardât quelques secondes en répondre"
+
+
+################ AÑADIDO DESPUES 03112020  V7  ###########
+
+export HACERBACKUP="sauvegarder"
+export RESTURARBACKUP="Restaurer la sauvegarde"
+export ENVIARCORREOBACKUP="Un email avec la sauvegarde sera envoyé à l'adresse fournie. Une copie sera également conservée dans /home/pi/dvlink_backup"
+export BACKUPENVIADO="Courriel de sauvegarde DVLINK envoyé avec succès"
+export AVISORESTAURARBACKUP="Cette option effacera tous les paramètres actuels et soustraira une sauvegarde précédente. Voulez-vous continuer?"
+export BACKUPNOEXISTE="Il n'y a pas de fichier de sauvegarde. Si vous en avez un, copiez-le dans / home / pi / dvlink_backup et réessayez pour que DVLINK l'interprète"
+export BACKUPEXISTE="Assurez-vous de restaurer la sauvegarde de date trouvée "
+export BACKUPTERMINADO="La sauvegarde s'est terminée avec succès. Maintenant, vous devez appliquer tous les paramètres dvswitch et HBLINK"
+export COPIASDESEGURIDAD="Copies de sauvegarde"
+export RECUPERA1="      recupera téléchargement de la version sur DVLINK jusqu'à la version 5"
+export RECUPERA2="Il doit être utilisé en cas d'échec de mise à jour en raison d'échecs de téléchargement à partir du référentiel"
+export RECUPERA3="Une fois recupera terminé, lancez le menu en recevant la mise à jour suivante"
+export RECUPERA4="N'oubliez pas que vous devez quitter le menu et entrer à nouveau pour recevoir la mise à jour suivante"
+export RECUPERA5="autant de fois que nécessaire jusqu'à ce que vous soyez dans la dernière version"
+export QUIEREUSARRECUPERA="Voulez-vous utiliser la récupération pour forcer la mise à jour?"
+export RECUPERADO="DVLINK téléchargé de la version vers la V5. Exécuter le menu plusieurs fois pour forcer la mise à jour"
+export GRACIAS1="Nous tenons à vous remercier EA5GVK @ EA5GVK, EA7JCL @Jackychan et @BLASMAKERS"
+export GRACIAS2="pour le soutien, suggestions, critiques, félicitations et problèmes signalés."
+export GRACIAS3="C'est quelque chose qui fait grandir DVLINK. Sans vous, ce ne serait pas possible"
+
