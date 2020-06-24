@@ -1,0 +1,28 @@
+[Unit]
+Description=VDVLINK D-Star Gateway Service
+
+After=network-online.target syslog.target netcheck.service
+Requires=netcheck.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=3
+StandardOutput=null
+# WorkingDirectory=
+ExecStartPre = /bin/sh -c 'echo "Starting ircDDBGateway: [`date +%%T.%%3N`]" >> /var/log/netcheck'
+ExecStart=/usr/bin/ircddbgatewayd -logdir:/var/log/ircddbgateway
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
+
+# Usage: ircddbgatewayd [-nolog] [-debug] [-daemon] [-logdir <str>] [-confdir <str>] [Gateway Name]
+#  -nolog
+#  -debug
+#  -daemon
+#  -logdir:<str>
+#  -confdir:<str>	
+
